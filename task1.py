@@ -8,14 +8,12 @@ STATUS_IN_PROGRESS = 'in-progress'
 STATUS_DONE = 'done'
 
 def load_tasks():
-    """Load tasks from the JSON file."""
     if not os.path.exists(TASKS_FILE):
         return []
     with open(TASKS_FILE, 'r') as file:
         return json.load(file)
 
 def save_tasks(tasks):
-    """Save tasks to the JSON file."""
     with open(TASKS_FILE, 'w') as file:
         json.dump(tasks, file, indent=4)
 
